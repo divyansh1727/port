@@ -6,19 +6,36 @@ const projects = [
     title: "E-Learning Platform",
     desc: "Full-stack platform with React, Firebase, course management, quizzes, and certificates.",
     tech: ["React", "Firebase", "Tailwind"],
-    link: "#",
+    live: "https://course9teen.vercel.app",
+    github: "https://github.com/divyansh1727/course9teen",
   },
   {
     title: "Gym Website",
     desc: "Modern gym website with neon-dark theme, animated sections, and membership plans.",
     tech: ["React", "Tailwind", "Framer Motion"],
-    link: "#",
+    live: "https://gymsite-pi.vercel.app",
+    github: "https://github.com/divyansh1727/gym-website",
   },
   {
     title: "Portfolio Website",
     desc: "Personal portfolio with neon-dark aesthetic and smooth animations.",
     tech: ["React", "Framer Motion"],
-    link: "#",
+    live: "https://port-kappa-gray.vercel.app",
+    github: "https://github.com/divyansh1727/portfolio",
+  },
+  {
+    title: "Art and Craft Website",
+    desc: "Art and Craft website with neon-dark aesthetic and fabulous working.",
+    tech: ["React", "Framer Motion"],
+    live: "https://artpour-4kra.vercel.app",
+    github: "https://github.com/divyansh1727/portfolio",
+  },
+  {
+    title: "GTA-VI Website",
+    desc: "Gaming website with a download option.",
+    tech: ["React", "Framer Motion"],
+    live: "https://gta-six-mocha.vercel.app",
+    github: "https://github.com/divyansh1727/gta",
   },
 ];
 
@@ -45,6 +62,7 @@ export default function Projects() {
           >
             <h3 className="text-2xl font-bold text-cyan-400 mb-3">{p.title}</h3>
             <p className="text-neutral-300 mb-4">{p.desc}</p>
+
             <div className="flex flex-wrap gap-2 mb-4">
               {p.tech.map((t, j) => (
                 <span
@@ -55,14 +73,26 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            <a
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 hover:underline"
-            >
-              View Project →
-            </a>
+
+            {/* Buttons */}
+            <div className="flex gap-4">
+              <a
+                href={p.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-cyan-500 text-black font-semibold rounded-lg hover:bg-cyan-400 transition"
+              >
+                Live Demo
+              </a>
+              <a
+                href={p.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition"
+              >
+                GitHub
+              </a>
+            </div>
           </motion.div>
         ))}
       </div>
