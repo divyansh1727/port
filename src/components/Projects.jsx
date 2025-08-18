@@ -1,0 +1,71 @@
+// src/components/Projects.jsx
+import { motion } from "framer-motion";
+
+const projects = [
+  {
+    title: "E-Learning Platform",
+    desc: "Full-stack platform with React, Firebase, course management, quizzes, and certificates.",
+    tech: ["React", "Firebase", "Tailwind"],
+    link: "#",
+  },
+  {
+    title: "Gym Website",
+    desc: "Modern gym website with neon-dark theme, animated sections, and membership plans.",
+    tech: ["React", "Tailwind", "Framer Motion"],
+    link: "#",
+  },
+  {
+    title: "Portfolio Website",
+    desc: "Personal portfolio with neon-dark aesthetic and smooth animations.",
+    tech: ["React", "Framer Motion"],
+    link: "#",
+  },
+];
+
+export default function Projects() {
+  return (
+    <section id="projects" className="py-20 bg-neutral-900 px-6 md:px-20">
+      <motion.h2
+        className="text-4xl md:text-5xl font-bold mb-12 text-center text-cyan-400"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        Projects
+      </motion.h2>
+
+      <div className="grid md:grid-cols-3 gap-8">
+        {projects.map((p, i) => (
+          <motion.div
+            key={i}
+            className="bg-neutral-950 p-6 rounded-2xl shadow-lg border border-neutral-800 hover:border-cyan-400 transition duration-300"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.2 }}
+          >
+            <h3 className="text-2xl font-bold text-cyan-400 mb-3">{p.title}</h3>
+            <p className="text-neutral-300 mb-4">{p.desc}</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {p.tech.map((t, j) => (
+                <span
+                  key={j}
+                  className="text-sm bg-neutral-800 px-3 py-1 rounded-full text-cyan-300"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+            <a
+              href={p.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 hover:underline"
+            >
+              View Project →
+            </a>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
