@@ -1,24 +1,58 @@
 // src/components/Contact.jsx
 import { motion } from "framer-motion";
-import { FaGithub,FaInstagram, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import emailjs from "emailjs-com"; // install: npm install emailjs-com
+import { useRef } from "react";
 
 export default function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        service_rlfm7zv, // replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // replace with your EmailJS template ID
+        form.current,
+        STd93kFk82qnINfgE// replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
+          alert("Message sent successfully!");
+          e.target.reset();
+        },
+        (error) => {
+          alert("Failed to send the message, please try again.");
+        }
+      );
+  };
+
   return (
     <section
       id="contact"
-      className="py-20 px-6 bg-neutral-950 text-white text-center"
+      className="relative py-20 px-6 bg-neutral-950 text-white text-center overflow-hidden"
     >
+      {/* Optional subtle animated background */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-cyan-900 via-purple-900 to-pink-900 opacity-10 -z-10 animate-[gradientShift_25s_linear_infinite]"
+        style={{ backgroundSize: "400% 400%" }}
+      />
+
       <motion.h2
-        className="text-4xl font-bold mb-12"
+        className="text-4xl md:text-5xl font-extrabold mb-12
+                   text-transparent bg-clip-text bg-gradient-to-r from-[#7FDBFF] via-[#2FFFD7] to-[#A18AFF]"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Contact Me
+        ✨ Contact Me
       </motion.h2>
 
       {/* Contact Form */}
       <motion.form
+        ref={form}
+        onSubmit={sendEmail}
         className="max-w-xl mx-auto space-y-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -26,22 +60,32 @@ export default function Contact() {
       >
         <input
           type="text"
+          name="user_name"
           placeholder="Your Name"
-          className="w-full p-3 rounded-lg bg-neutral-800 text-white focus:outline-none"
+          className="w-full p-3 rounded-lg bg-neutral-800 text-white
+                     focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+          required
         />
         <input
           type="email"
+          name="user_email"
           placeholder="Your Email"
-          className="w-full p-3 rounded-lg bg-neutral-800 text-white focus:outline-none"
+          className="w-full p-3 rounded-lg bg-neutral-800 text-white
+                     focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+          required
         />
         <textarea
+          name="message"
           placeholder="Your Message"
           rows="4"
-          className="w-full p-3 rounded-lg bg-neutral-800 text-white focus:outline-none"
+          className="w-full p-3 rounded-lg bg-neutral-800 text-white
+                     focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+          required
         ></textarea>
         <button
           type="submit"
-          className="px-6 py-3 rounded-lg bg-fuchsia-600 hover:bg-fuchsia-700 transition-all font-semibold"
+          className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#5FFFE7] via-[#7FDBFF] to-[#A18AFF]
+                     text-black font-semibold shadow-lg hover:shadow-[#2FFFD7]/50 transition-all"
         >
           Send Message
         </button>
@@ -52,47 +96,53 @@ export default function Contact() {
         className="flex justify-center gap-6 mt-12 text-2xl"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
+        transition={{ delay: 0.5 }}
       >
-        <a
+        <motion.a
           href="https://github.com/divyansh1727"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-fuchsia-500 transition-all"
+          whileHover={{ scale: 1.2, color: "#2FFFD7" }}
+          className="transition-colors"
         >
           <FaGithub />
-        </a>
-        <a
-          href="https://linkedin.com/in/Divyansh Singh"
+        </motion.a>
+        <motion.a
+          href="https://linkedin.com/in/divyansh1727"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-fuchsia-500 transition-all"
+          whileHover={{ scale: 1.2, color: "#2FFFD7" }}
+          className="transition-colors"
         >
           <FaLinkedin />
-        </a>
-        <a
-          href="https://twitter.com/yourusername"
+        </motion.a>
+        <motion.a
+          href="https://instagram.com/divyansh1727"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-fuchsia-500 transition-all"
-        >
-          <FaTwitter />
-        </a>
-        <a
-          href="divys2705@email.com"
-          className="hover:text-fuchsia-500 transition-all"
-        >
-          <FaEnvelope />
-        </a>
-        <a
-          href="https://instagram.com/divyanshhhhh.27"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-fuchsia-500 transition-all"
+          whileHover={{ scale: 1.2, color: "#2FFFD7" }}
+          className="transition-colors"
         >
           <FaInstagram />
-        </a>
+        </motion.a>
+        <motion.a
+          href="https://twitter.com/divyansh1727"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.2, color: "#2FFFD7" }}
+          className="transition-colors"
+        >
+          <FaTwitter />
+        </motion.a>
+        <motion.a
+          href="mailto:yourmail@example.com"
+          whileHover={{ scale: 1.2, color: "#2FFFD7" }}
+          className="transition-colors"
+        >
+          <FaEnvelope />
+        </motion.a>
       </motion.div>
     </section>
   );
 }
+

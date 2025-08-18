@@ -17,12 +17,12 @@ export default function About() {
       </motion.h2>
 
       <motion.p
-        className="max-w-3xl mx-auto text-lg md:text-xl text-neutral-300 leading-relaxed"
+        className="max-w-3xl mx-auto text-lg md:text-xl italic text-neutral-300 leading-relaxed"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        Hi, I’m <span className="text-cyan-400 font-semibold">Divyansh</span>, a
+        Hi, I’m <span className="text-cyan-400 italic font-semibold">Divyansh</span>, a
         passionate developer who loves building modern, interactive, and
         aesthetic web experiences. I specialize in{" "}
         <span className="text-cyan-400">React</span>,{" "}
