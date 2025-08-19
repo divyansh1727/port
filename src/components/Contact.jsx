@@ -1,8 +1,9 @@
 // src/components/Contact.jsx
 import { motion } from "framer-motion";
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import emailjs from "emailjs-com"; // install: npm install emailjs-com
 import { useRef } from "react";
+import { SiGmail } from "react-icons/si";
 
 export default function Contact() {
   const form = useRef();
@@ -108,16 +109,17 @@ export default function Contact() {
           <FaGithub />
         </motion.a>
         <motion.a
-          href="https://linkedin.com/in/divyansh1727"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.2, color: "#2FFFD7" }}
-          className="transition-colors"
-        >
-          <FaLinkedin />
-        </motion.a>
+  href="https://www.linkedin.com/in/divyansh-singh-3a917437b/"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.2 }}
+  className="text-gray-400 hover:text-[#2FFFD7] transition-colors"
+>
+  <FaLinkedin className="text-3xl" />
+</motion.a>
+
         <motion.a
-          href="https://instagram.com/divyansh1727"
+          href="https://instagram.com/divyanshhhhh.27"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.2, color: "#2FFFD7" }}
@@ -135,11 +137,12 @@ export default function Contact() {
           <FaTwitter />
         </motion.a>
         <motion.a
-          href="mailto:yourmail@example.com"
+          href="mailto:divys2705@gmail.com"
+          target="_blank"
           whileHover={{ scale: 1.2, color: "#2FFFD7" }}
-          className="transition-colors"
+          className="text-gray-400 hover:text-red-500 transition-colors"
         >
-          <FaEnvelope />
+          <SiGmail className="text-3xl" />
         </motion.a>
       </motion.div>
     </section>

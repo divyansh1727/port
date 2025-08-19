@@ -26,16 +26,7 @@ export default function Footer() {
         </div>
 
         {/* Right Section - Socials */}
-        <div>
-          <h3 className="text-xl font-semibold text-white mb-3">Connect</h3>
-          <div className="flex justify-center md:justify-start gap-5 text-2xl">
-            <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noreferrer" className="hover:text-cyan-400"><FaGithub /></a>
-            <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noreferrer" className="hover:text-cyan-400"><FaLinkedin /></a>
-            <a href="https://twitter.com/YOUR_USERNAME" target="_blank" rel="noreferrer" className="hover:text-cyan-400"><FaTwitter /></a>
-            <a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noreferrer" className="hover:text-cyan-400"><FaInstagram /></a>
-            <a href="mailto:your@email.com" className="hover:text-cyan-400"><FaEnvelope /></a>
-          </div>
-        </div>
+       
       </div>
 
       {/* Bottom Section */}
