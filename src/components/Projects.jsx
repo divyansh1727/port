@@ -20,11 +20,11 @@ const projects = [
     title: "Portfolio Website",
     desc: "Personal portfolio with neon-dark aesthetic and smooth animations.",
     tech: ["React", "Framer Motion"],
-    live: "https://port-rouge-mu.vercel.app",
+    live: "https://port-eosin-five.vercel.app",
     github: "https://github.com/divyansh1727/portfolio",
   },
   {
-    title: "Art and Craft Website",
+        title: "Art and Craft Website",
     desc: "Art and Craft website with neon-dark aesthetic and fabulous working.",
     tech: ["React", "Framer Motion"],
     live: "https://artpour-4kra.vercel.app",
