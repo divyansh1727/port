@@ -20,7 +20,7 @@ const projects = [
     title: "Portfolio Website",
     desc: "Personal portfolio with neon-dark aesthetic and smooth animations.",
     tech: ["React", "Framer Motion"],
-    live: "https://port-kappa-gray.vercel.app",
+    live: "https://port-rouge-mu.vercel.app",
     github: "https://github.com/divyansh1727/portfolio",
   },
   {
