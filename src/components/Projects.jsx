@@ -27,8 +27,8 @@ const projects = [
         title: "Art and Craft Website",
     desc: "Art and Craft website with neon-dark aesthetic and fabulous working.",
     tech: ["React", "Framer Motion"],
-    live: "https://artpour-4kra.vercel.app",
-    github: "https://github.com/divyansh1727/portfolio",
+    live: "https://artpour.vercel.app",
+    github: "https://github.com/divyansh1727/pourbykay",
   },
   {
     title: "GTA-VI Website",
