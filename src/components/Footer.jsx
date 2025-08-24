@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <h2 className="text-2xl font-bold text-white mb-3">Divyansh Singh</h2>
           <p className="text-gray-400 text-sm">
-            Full Stack Developer | React • Firebase • Tailwind  
+            Full Stack Developer | Learner 
           </p>
         </div>
 

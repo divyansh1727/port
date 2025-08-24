@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import NameSwitcher from "./NameSwitcher"; // ✅ import it
 
 const generateParticles = (count) =>
   Array.from({ length: count }, () => ({
@@ -42,7 +43,7 @@ export default function Hero() {
 
       {/* Heading with floating emoji */}
       <motion.h1
-        className="text-6xl md:text-8xl font-extrabold italic
+        className="text-6xl md:text-8xl font-extrabold 
                    text-transparent bg-clip-text
                    bg-gradient-to-r from-teal-300 via-sky-400 to-violet-400
                    drop-shadow-[0_2px_10px_rgba(56,189,248,0.35)]"
@@ -50,10 +51,10 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Hey, I’m Divyansh{" "}
+        Hey, I’m <NameSwitcher />{" "}   {/* ✅ replaced here */}
         <motion.span
           animate={{ y: [0, -20, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          transition={{ repeat: Infinity, duration: 1, ease: "easeInOut" }}
           className="inline-block"
         >
           ☄️
@@ -62,7 +63,7 @@ export default function Hero() {
 
       {/* Subheading */}
       <motion.p
-        className="mt-6 text-lg md:text-2xl italic text-gray-300 max-w-2xl
+        className="mt-6 text-lg md:text-2xl  text-gray-300 max-w-2xl
                    bg-gradient-to-r from-teal-200 via-sky-300 to-violet-300
                    bg-clip-text text-transparent"
         initial={{ opacity: 0 }}

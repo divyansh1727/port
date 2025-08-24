@@ -1,7 +1,17 @@
 // src/components/About.jsx
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function About() {
+  const [isHindi, setIsHindi] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsHindi((prev) => !prev);
+    }, 3000); // toggle every 3 sec
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="about"
@@ -22,12 +32,39 @@ export default function About() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        Hi, I’m <span className="text-cyan-400 italic font-semibold">Divyansh</span>, a
-        passionate developer who loves building modern, interactive, and
+        Hi, I’m{" "}
+        <AnimatePresence mode="wait">
+          {isHindi ? (
+            <motion.span
+              key="hindi"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="text-cyan-400 italic font-semibold"
+              
+
+            >
+              दिव्यांश
+            </motion.span>
+          ) : (
+            <motion.span
+              key="english"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="text-cyan-400 italic font-semibold"
+            >
+              Divyansh
+            </motion.span>
+          )}
+        </AnimatePresence>
+        , a passionate developer who loves building modern, interactive, and
         aesthetic web experiences. I specialize in{" "}
         <span className="text-cyan-400">React</span>,{" "}
         <span className="text-cyan-400">Firebase</span>, and{" "}
-        <span className="text-cyan-400">Tailwind CSS</span>.  
+        <span className="text-cyan-400">Tailwind CSS</span>.
         <br />
         <br />
         My mission is to craft web apps that are not only functional but also

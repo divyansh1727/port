@@ -29,7 +29,7 @@ const projects = [
     tech: ["React", "Framer Motion"],
     live: "https://artpour.vercel.app",
     github: "https://github.com/divyansh1727/pourbykay",
-  },
+  }, 
   {
     title: "GTA-VI Website",
     desc: "Gaming website with a download option.",
